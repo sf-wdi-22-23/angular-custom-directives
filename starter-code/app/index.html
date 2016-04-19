@@ -14,24 +14,27 @@
     <body>
       <div class="container">
         <header class='navbar'>
-          <h1 class='pull-left'>Cards Against Assembly</h1>
-
-          <scores></scores>
+          <div class='col-sm-6'>
+            <h1 class='pull-left'>Cards Against Assembly</h1>
+          </div>
+          <div ng-controller="PlayersController as players" class='col-sm-6'>
+            <div ng-repeat="player in players.players">
+              <scores></scores>
+            </div>
+          </div>
         </header>
 
         <section id="cards" class='container-fluid' ng-controller="CardsController as cards">
           <div class='row'>
 
             <div class='col-sm-6 col-md-6 col-lg-4' ng-repeat="card in cards.questions" >
-              <div class='card'>
-                <h4 class="card-title">{{card.question}}</h4>
-                <h6>Cards Against Assembly</h6>
-              </div>
+              <card question="{{card.question}}"></card>
             </div>
 
           </div>
         </section>
-
+        <hr/>
+        <card question="Why is code?"></card>
       <footer>
         <p>Made with <span class='heart'>♥︎</span> at General Assembly</p>
       </footer>
