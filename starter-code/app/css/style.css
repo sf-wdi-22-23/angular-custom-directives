@@ -65,3 +65,10 @@ footer {
 footer .heart {
   color:#cf2e31;
 }
+.scores {
+  /*position: absolute;*/
+
+}
+ul {
+  text-align: right;
+}
